@@ -39,6 +39,16 @@
   h1,h2,h3,.brand{
     font-family:'Baloo 2',system-ui,sans-serif;
   }
+  p{
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+  }
+  .fact span{
+    display:block;
+    text-align:justify;
+    hyphens:auto;
+  }
   a{color:inherit;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
@@ -97,6 +107,10 @@
     pointer-events:none;
   }
   .hero .inner{position:relative;z-index:1;max-width:760px;}
+  .eyebrow-row{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-bottom:24px;
+  }
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     background:rgba(255,255,255,0.1);
@@ -104,7 +118,12 @@
     color:#f0edff;
     padding:7px 16px;border-radius:999px;
     font-size:.85rem;font-weight:500;
-    margin-bottom:24px;
+    margin-bottom:0;
+  }
+  .eyebrow.eyebrow-funding{
+    background:rgba(251,191,36,0.16);
+    border-color:rgba(251,191,36,0.4);
+    color:#ffe9b3;
   }
   .hero h1{
     font-size:3.2rem;
@@ -125,6 +144,8 @@
     font-size:1.02rem;
     margin:0 0 36px;
     max-width:640px;
+    text-align:justify;
+    hyphens:auto;
   }
   .cta-row{display:flex;flex-wrap:wrap;gap:16px;}
   .btn{
@@ -189,7 +210,7 @@
     gap:56px;
     align-items:start;
   }
-  .about p{color:#3d3568;font-size:1.02rem;}
+  .about p{color:#3d3568;font-size:1.02rem;text-align:justify;hyphens:auto;}
   .about-extra{
     max-height:0;
     overflow:hidden;
@@ -371,6 +392,23 @@
   }
   .team-card a.mail:hover{text-decoration:underline;}
 
+  .funding{
+    background:var(--card);
+    padding:0 0 56px;
+  }
+  .funding-box{
+    display:flex;align-items:flex-start;gap:16px;
+    background:#f8f7fc;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 26px;
+  }
+  .funding-ic{font-size:1.4rem;flex:none;line-height:1.4;}
+  .funding-box p{
+    margin:0;color:var(--muted);font-size:.85rem;line-height:1.6;
+    text-align:justify;hyphens:auto;
+  }
+
   footer{
     background:var(--navy);
     color:#b9b2e0;
@@ -407,7 +445,10 @@
 
 <section class="hero">
   <div class="wrap inner">
-    <span class="eyebrow">🎓 Universidad del Istmo · Campus Tehuantepec</span>
+    <div class="eyebrow-row">
+      <span class="eyebrow">🎓 Universidad del Istmo · Campus Tehuantepec</span>
+      <span class="eyebrow eyebrow-funding">🏛️ Proyecto financiado por SECIHTI 2025</span>
+    </div>
     <h1>AdaptaEdu</h1>
     <p class="tagline">Videojuegos Adaptativos con Machine Learning para Fomentar la Resiliencia y Equidad Educativa en Educación Básica y Media</p>
     <p class="lead">Videojuegos educativos que usan inteligencia artificial para ajustar, en tiempo real, la dificultad y la historia según el progreso, las habilidades y las emociones de cada estudiante &mdash; mientras un sistema en la nube apoya a los docentes con alertas e intervenciones oportunas.</p>
@@ -578,7 +619,7 @@
     </div>
   </div>
 </section>
-  
+
 <footer>
   <p><strong>AdaptaEdu</strong> · Videojuegos Adaptativos con Machine Learning para Fomentar la Resiliencia y Equidad Educativa en Educación Básica y Media.</p>
   <p>Universidad del Istmo, Campus Tehuantepec &middot; 2026</p>
